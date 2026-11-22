@@ -1,35 +1,71 @@
+<div align="center">
+
 # SAP ABAP Classic Enterprise Projects
 
-[🇬🇧 English](#english) | [🇹🇷 Türkçe](#türkçe)
+**End-to-End Classic SAP ABAP Applications • OO ABAP • Dynpro • Web Services • Forms**
+
+[![SAP ABAP](https://img.shields.io/badge/SAP-ABAP-0FAAFF?style=for-the-badge&logo=sap&logoColor=white)]()
+[![OO ABAP](https://img.shields.io/badge/Architecture-OO%20ABAP-005A9C?style=for-the-badge)]()
+[![Dynpro & ALV](https://img.shields.io/badge/UI-Dynpro%20%26%20Container%20ALV-2E8B57?style=for-the-badge)]()
+[![Forms](https://img.shields.io/badge/Output-SmartForms%20%26%20AdobeForms-D9534F?style=for-the-badge)]()
+[![Web Services](https://img.shields.io/badge/Integration-HTTP%20%2F%20XML-F0AD4E?style=for-the-badge)]()
+
+<br/>
+
+**[🇬🇧 English](#-english) • [🇹🇷 Türkçe](#-türkçe) • [📁 Repository Structure](#-repository-structure--klasör-yapısı)**
+
+</div>
 
 ---
 
-## <a name="english"></a>🇬🇧 English
+## English
 
-A collection of end-to-end Classic SAP ABAP applications built with **OO ABAP, Dynpro, Container ALV, Web Service Integration, Form Outputs (SmartForms / AdobeForms), Lock Objects, and Role-Based Authorization**.
+A curated portfolio of production-grade **Classic SAP ABAP** enterprise projects. Built with clean **Object-Oriented ABAP** design, strict concurrency/authorization mechanisms, external HTTP/XML integrations, and automated background processing.
 
-### 📂 Projects
+### Featured Projects
 
-| # | Project | T-Code | Core Technologies |
-|---|---|---|---|
-| **01** | [**Job Tracking Cockpit (`ZIG_JOBS`)**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Dynpro (PBO/PAI), OO ABAP, Container ALV, SNRO, Lock Objects, Authority-Check, Search Help |
-| **02** | [**TCMB Exchange Rate Panel (`ZIG_TCMB`)**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | `IF_HTTP_CLIENT` (XML), Dual-Structure Design, Container ALV, `CL_BCS` Email, SmartForms, AdobeForms, `SM36` Job |
+| # | Project & Link | T-Code | Key Highlights |
+| :---: | :--- | :---: | :--- |
+| **01** | 📋 [**Job Tracking Cockpit**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Multi-screen **Dynpro** (101–109), **Container ALV**, **SNRO** auto-numbering, **Lock Objects** (`ENQUEUE`/`DEQUEUE`), Role-Based **Authority-Check** (PBO/PAI), Custom Search Help |
+| **02** | 💱 [**TCMB Exchange Rate Panel**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | Live Central Bank **XML Integration** (`IF_HTTP_CLIENT`), **Dual-Structure** ALV Design, Trend Icons, **`CL_BCS`** HTML Email + UTF-8 Excel, **SmartForms & AdobeForms**, **`SM36`** Daily Job |
 
----
-
-## <a name="türkçe"></a>🇹🇷 Türkçe
-
-**OO ABAP, Dynpro, Container ALV, Web Servis Entegrasyonu, Form Çıktıları (SmartForms / AdobeForms), Kilit Nesneleri (Lock Objects) ve Rol Bazlı Yetkilendirme** kullanılarak uçtan uca geliştirilmiş Klasik SAP ABAP kurumsal projeleri koleksiyonu.
-
-### 📂 Projeler
-
-| # | Proje | T-Code | Temel Teknolojiler |
-|---|---|---|---|
-| **01** | [**İş Takip Kokpiti (`ZIG_JOBS`)**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Dynpro (PBO/PAI), OO ABAP, Container ALV, SNRO, Lock Objects, Authority-Check, Search Help |
-| **02** | [**TCMB Döviz Kuru Paneli (`ZIG_TCMB`)**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | `IF_HTTP_CLIENT` (XML), Çift Structure Mimarisi, Container ALV, `CL_BCS` Mail, SmartForms, AdobeForms, `SM36` Job |
+### Core Technical Stack
+* **Programming & UI:** Classic ABAP, Object-Oriented ABAP (`SE24`), Module Pool / Dynpro (`PBO`/`PAI`), `CL_GUI_ALV_GRID` (Container ALV)
+* **Data Dictionary & Security:** Custom Tables, Structures, Help Views, Search Helps (`SE11`), Lock Objects, Number Ranges (`SNRO`), Authorization Objects (`SU21`)
+* **Integration & Output:** `IF_HTTP_CLIENT` (REST/XML), `CL_BCS` Email Services, SmartForms, AdobeForms, Background Jobs (`SM36`)
 
 ---
 
-## 👨‍💻 Author / Geliştirici
-**İbrahim Gündoğmuş** — Computer Engineering Senior Student | SAP ABAP & BTP Cloud Developer  
-[LinkedIn](https://linkedin.com/in/ibrahimgündoğmuş) • [GitHub](https://github.com/ibrahimgndgms)
+## Türkçe
+
+Temiz **Nesne Yönelimli ABAP (OO ABAP)** mimarisi, eşzamanlılık/yetkilendirme kontrolleri, harici HTTP/XML web servis entegrasyonları ve otomatik arka plan işleri kullanılarak uçtan uca geliştirilmiş **Klasik SAP ABAP** kurumsal proje portfolyosu.
+
+### Öne Çıkan Projeler
+
+| # | Proje ve Bağlantı | T-Code | Öne Çıkan Özellikler |
+| :---: | :--- | :---: | :--- |
+| **01** | [**İş Takip Kokpiti**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Çok ekranlı **Dynpro** (101–109), **Container ALV**, **SNRO** otomatik numara, **Kilit Nesneleri** (`ENQUEUE`/`DEQUEUE`), Rol Bazlı **Yetki Kontrolü** (PBO/PAI), Özel Search Help |
+| **02** | [**TCMB Döviz Kuru Paneli**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | Canlı Merkez Bankası **XML Entegrasyonu** (`IF_HTTP_CLIENT`), **Çift Structure** ALV Mimarisi, Trend İkonları, **`CL_BCS`** HTML Mail + UTF-8 Excel, **SmartForms & AdobeForms**, **`SM36`** Job |
+
+### Kullanılan Teknolojiler
+* **Programlama ve Arayüz:** Klasik ABAP, Nesne Yönelimli ABAP (`SE24`), Module Pool / Dynpro (`PBO`/`PAI`), `CL_GUI_ALV_GRID` (Container ALV)
+* **Veri Sözlüğü ve Güvenlik:** Özel Tablolar, Structure'lar, Help View & Search Help (`SE11`), Kilit Nesneleri, Numara Aralıkları (`SNRO`), Yetki Nesneleri (`SU21`)
+* **Entegrasyon ve Çıktı:** `IF_HTTP_CLIENT` (REST/XML), `CL_BCS` E-Posta Servisleri, SmartForms, AdobeForms, Arka Plan İşleri (`SM36`)
+
+---
+
+## Repository Structure / Klasör Yapısı
+
+```text
+sap-abap-classic/
+├── 📄 README.md
+├── 📂 01-ZIG_JOBS-Job-Tracking-Cockpit/
+│   ├── 📄 README.md        # Detailed documentation & screenshots
+│   ├── 📂 src/             # Exported ABAP programs, classes & DDIC (abapGit)
+│   ├── 📂 images/          # Dynpro, ALV, Lock & Auth screenshots
+│   └── 📂 docs/            # Full Technical Report (PDF)
+└── 📂 02-ZIG_TCMB-Exchange-Rate-Panel/
+    ├── 📄 README.md        # Detailed documentation & screenshots
+    ├── 📂 src/             # Exported ABAP programs, classes & DDIC (abapGit)
+    ├── 📂 images/          # ALV Panel, Email & Form screenshots
+    └── 📂 docs/            # Full Technical Report (PDF)
