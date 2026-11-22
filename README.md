@@ -12,7 +12,7 @@
 
 <br/>
 
-**[English](#-english) • [Türkçe](#-türkçe) • [📁 Repository Structure](#-repository-structure--klasör-yapısı)**
+**[English](#english) • [Türkçe](#türkçe) **
 
 </div>
 
