@@ -26,8 +26,8 @@ A curated portfolio of production-grade **Classic SAP ABAP** enterprise projects
 
 | # | Project & Link | T-Code | Key Highlights |
 | :---: | :--- | :---: | :--- |
-| **01** | 📋 [**Job Tracking Cockpit**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Multi-screen **Dynpro** (101–109), **Container ALV**, **SNRO** auto-numbering, **Lock Objects** (`ENQUEUE`/`DEQUEUE`), Role-Based **Authority-Check** (PBO/PAI), Custom Search Help |
-| **02** | 💱 [**TCMB Exchange Rate Panel**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | Live Central Bank **XML Integration** (`IF_HTTP_CLIENT`), **Dual-Structure** ALV Design, Trend Icons, **`CL_BCS`** HTML Email + UTF-8 Excel, **SmartForms & AdobeForms**, **`SM36`** Daily Job |
+| **01** | [**Job Tracking Cockpit**](./01-ZIG_JOBS-Job-Tracking-Cockpit) | `ZIG_JOBS` | Multi-screen **Dynpro** (101–109), **Container ALV**, **SNRO** auto-numbering, **Lock Objects** (`ENQUEUE`/`DEQUEUE`), Role-Based **Authority-Check** (PBO/PAI), Custom Search Help |
+| **02** | [**TCMB Exchange Rate Panel**](./02-ZIG_TCMB-Exchange-Rate-Panel) | `ZIG_TCMB` | Live Central Bank **XML Integration** (`IF_HTTP_CLIENT`), **Dual-Structure** ALV Design, Trend Icons, **`CL_BCS`** HTML Email + UTF-8 Excel, **SmartForms & AdobeForms**, **`SM36`** Daily Job |
 
 ### Core Technical Stack
 * **Programming & UI:** Classic ABAP, Object-Oriented ABAP (`SE24`), Module Pool / Dynpro (`PBO`/`PAI`), `CL_GUI_ALV_GRID` (Container ALV)
