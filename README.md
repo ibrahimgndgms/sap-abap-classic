@@ -12,7 +12,7 @@
 
 <br/>
 
-**[🇬🇧 English](#-english) • [🇹🇷 Türkçe](#-türkçe) • [📁 Repository Structure](#-repository-structure--klasör-yapısı)**
+**[English](#-english) • [Türkçe](#-türkçe) • [📁 Repository Structure](#-repository-structure--klasör-yapısı)**
 
 </div>
 
@@ -51,21 +51,3 @@ Temiz **Nesne Yönelimli ABAP (OO ABAP)** mimarisi, eşzamanlılık/yetkilendirm
 * **Programlama ve Arayüz:** Klasik ABAP, Nesne Yönelimli ABAP (`SE24`), Module Pool / Dynpro (`PBO`/`PAI`), `CL_GUI_ALV_GRID` (Container ALV)
 * **Veri Sözlüğü ve Güvenlik:** Özel Tablolar, Structure'lar, Help View & Search Help (`SE11`), Kilit Nesneleri, Numara Aralıkları (`SNRO`), Yetki Nesneleri (`SU21`)
 * **Entegrasyon ve Çıktı:** `IF_HTTP_CLIENT` (REST/XML), `CL_BCS` E-Posta Servisleri, SmartForms, AdobeForms, Arka Plan İşleri (`SM36`)
-
----
-
-## Repository Structure / Klasör Yapısı
-
-```text
-sap-abap-classic/
-├── 📄 README.md
-├── 📂 01-ZIG_JOBS-Job-Tracking-Cockpit/
-│   ├── 📄 README.md        # Detailed documentation & screenshots
-│   ├── 📂 src/             # Exported ABAP programs, classes & DDIC (abapGit)
-│   ├── 📂 images/          # Dynpro, ALV, Lock & Auth screenshots
-│   └── 📂 docs/            # Full Technical Report (PDF)
-└── 📂 02-ZIG_TCMB-Exchange-Rate-Panel/
-    ├── 📄 README.md        # Detailed documentation & screenshots
-    ├── 📂 src/             # Exported ABAP programs, classes & DDIC (abapGit)
-    ├── 📂 images/          # ALV Panel, Email & Form screenshots
-    └── 📂 docs/            # Full Technical Report (PDF)
