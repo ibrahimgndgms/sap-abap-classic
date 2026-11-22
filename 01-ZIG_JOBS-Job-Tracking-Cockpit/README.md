@@ -1,10 +1,10 @@
 # ZIG_JOBS — Enterprise Job Tracking Cockpit / Kurumsal İş Takip Kokpiti
 
-[🇬🇧 English](#english) | [🇹🇷 Türkçe](#türkçe)
+[English](#english) | [Türkçe](#türkçe)
 
 ---
 
-## <a name="english"></a>🇬🇧 English
+## <a name="english"></a> English
 
 **Main Program:** `ZIG_JOB_COCKPIT` | **Transaction Code:** `ZIG_JOBS`  
 An end-to-end SAP ABAP application for centrally managing departmental tasks, personnel assignments, priorities, and lifecycle statuses with strict concurrency and role-based security controls.
@@ -39,7 +39,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 
 ---
 
-## <a name="türkçe"></a>🇹🇷 Türkçe
+## <a name="türkçe"></a>Türkçe
 
 **Ana Program:** `ZIG_JOB_COCKPIT` | **İşlem Kodu (T-Code):** `ZIG_JOBS`  
 Şirket bünyesindeki departmanların iş kayıtlarını merkezi bir SAP ortamında uçtan uca yönetmek, personellere atamak, öncelik ve durumlarını eşzamanlılık (kilit) ve rol bazlı yetki kontrolleriyle takip etmek için geliştirilmiştir.
