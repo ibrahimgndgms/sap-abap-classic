@@ -1,4 +1,4 @@
-# 📋 ZIG_JOBS — Enterprise Job Tracking Cockpit / Kurumsal İş Takip Kokpiti
+# ZIG_JOBS — Enterprise Job Tracking Cockpit / Kurumsal İş Takip Kokpiti
 
 [🇬🇧 English](#english) | [🇹🇷 Türkçe](#türkçe)
 
@@ -9,7 +9,7 @@
 **Main Program:** `ZIG_JOB_COCKPIT` | **Transaction Code:** `ZIG_JOBS`  
 An end-to-end SAP ABAP application for centrally managing departmental tasks, personnel assignments, priorities, and lifecycle statuses with strict concurrency and role-based security controls.
 
-### 🏗️ System Architecture & Data Dictionary (SE11)
+### System Architecture & Data Dictionary (SE11)
 * **Database Tables:**
   * `ZIGT_JOBS` (`ZIGS_JOB` / Maintenance: `ZIG_JOBS_MAINTENANCE`): Core job records with automatic numbering.
   * `ZIGT_PERSONELS` (`ZIGS_PERSONEL` / Maintenance: `ZIG_PERSONELS_MAINTE`): Personnel master data with Active/Passive status.
@@ -19,7 +19,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 * **Search Help:** `ZIG_HV_PERSONELS` (Help View) + `ZIG_SH_PERSONEL` ensures only **Active** personnel can be assigned.
 * **Authorization:** Custom object `ZIG_J_AUTH` (Class `ZIGC`) separating `ZIG_JOB_ADMIN` and `ZIG_JOB_USER` roles in both PBO and PAI.
 
-### ⚙️ Object-Oriented ABAP Design (SE24)
+### Object-Oriented ABAP Design (SE24)
 
 | Class | Key Methods | Responsibility |
 |---|---|---|
@@ -27,7 +27,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 | `ZIGCL_JOP_ANALYTICS` | `get_total_jobs_count`, `get_delayed_jobs_count`, `get_criticial_jobs_count`, `get_ongoing_jobs_count` | Real-time KPI calculations for the main dashboard. |
 | `ZIGCL_JOB_UTILITIES` | `check_start_due_date` | Business rule validations (date consistency, status transitions). |
 
-### ✅ Verified Test Scenarios
+### Verified Test Scenarios
 
 | ID | Test Case | Expected Behavior | Result |
 |---|---|---|---|
@@ -44,7 +44,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 **Ana Program:** `ZIG_JOB_COCKPIT` | **İşlem Kodu (T-Code):** `ZIG_JOBS`  
 Şirket bünyesindeki departmanların iş kayıtlarını merkezi bir SAP ortamında uçtan uca yönetmek, personellere atamak, öncelik ve durumlarını eşzamanlılık (kilit) ve rol bazlı yetki kontrolleriyle takip etmek için geliştirilmiştir.
 
-### 🏗️ Sistem Mimarisi ve Veri Sözlüğü (SE11)
+### Sistem Mimarisi ve Veri Sözlüğü (SE11)
 * **Veritabanı Tabloları:**
   * `ZIGT_JOBS` (`ZIGS_JOB` / Bakım: `ZIG_JOBS_MAINTENANCE`): Otomatik numaralandırmalı ana iş kayıtları tablosu.
   * `ZIGT_PERSONELS` (`ZIGS_PERSONEL` / Bakım: `ZIG_PERSONELS_MAINTE`): Aktif/Pasif durumlu personel ana verisi.
@@ -54,7 +54,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 * **Arama Yardımcısı (Search Help):** `ZIG_HV_PERSONELS` ve `ZIG_SH_PERSONEL` ile yalnızca **Aktif** personellerin seçilmesi sağlanır.
 * **Yetkilendirme:** `ZIGC` sınıfı altındaki `ZIG_J_AUTH` yetki nesnesi ile Yönetici (`ZIG_JOB_ADMIN`) ve Normal Kullanıcı (`ZIG_JOB_USER`) rolleri PBO ve PAI adımlarında ayrıştırılmıştır.
 
-### ⚙️ Nesne Yönelimli ABAP Mimarisi (SE24)
+### Nesne Yönelimli ABAP Mimarisi (SE24)
 
 | Sınıf | Temel Metotlar | Sorumluluk |
 |---|---|---|
@@ -62,7 +62,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 | `ZIGCL_JOP_ANALYTICS` | `get_total_jobs_count`, `get_delayed_jobs_count`, `get_criticial_jobs_count`, `get_ongoing_jobs_count` | Ana kokpit (Dashboard) için anlık KPI hesaplamaları. |
 | `ZIGCL_JOB_UTILITIES` | `check_start_due_date` | Tarih tutarlılığı ve iş kuralı doğrulamaları. |
 
-### ✅ Doğrulanan Test Senaryoları
+### Doğrulanan Test Senaryoları
 
 | No | Test Senaryosu | Beklenen Sonuç | Durum |
 |---|---|---|---|
@@ -74,7 +74,7 @@ An end-to-end SAP ABAP application for centrally managing departmental tasks, pe
 
 ---
 
-## 🖥️ Screenshots / Ekran Görüntüleri
+## Screenshots / Ekran Görüntüleri
 
 ### 1. Main Cockpit & Dashboard / Ana Kokpit (Dynpro 101)
 ![Main Dashboard](./images/dynpro_101_dashboard.png)
