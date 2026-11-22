@@ -1,4 +1,4 @@
-# 💱 ZIG_TCMB — Central Bank (TCMB) XML Exchange Rate Integration / TCMB Döviz Kuru Entegrasyonu
+# ZIG_TCMB — Central Bank (TCMB) XML Exchange Rate Integration / TCMB Döviz Kuru Entegrasyonu
 
 [English](#english) | [Türkçe](#türkçe)
 
@@ -60,10 +60,22 @@ Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından günlük yayınlanan XML 
 
 ## Screenshots / Ekran Görüntüleri
 
-### 1. Container ALV Exchange Rate Panel & Trend Icons / ALV Kur Paneli
-![TCMB ALV Panel](./images/tcmb_alv_panel.png)
+### 1. Selection Screen (Date & ALV Format) / Seçim Ekranı
+*Users can select a target date and switch between Container ALV and Reuse ALV formats.*  
+*Kullanıcı tarih seçimi yapabilir ve Container ALV / Reuse ALV formatları arasında geçiş yapabilir.*
+![Selection Screen](./images/01_selection_screen.png)
 
-### 2. Automated HTML Summary Email & PDF Form Output / E-Posta ve Form Çıktısı
-![Email & Form Output](./images/tcmb_output.png)
+### 2. Container ALV Panel & Weekend Fallback / ALV Kur Paneli ve Trend İkonları
+*When a weekend date (22.11.2026) is entered, the system automatically fetches the latest Friday rates (20.11.2026) with daily trend icons and toolbar actions (Save DB, Excel, Mail, AdobeForm, SmartForm).*  
+*Hafta sonu tarihi (22.11.2026) girildiğinde sistem otomatik olarak en son Cuma kurlarını (20.11.2026) günlük trend ikonları ve üst menü aksiyonlarıyla (Veritabanına Kaydet, Excel, Mail, AF/SF Çıktısı) listeler.*
+![Container ALV Panel](./images/02_container_alv.png)
 
-📄 **Full Technical Report / Detaylı Proje Raporu:** [GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf](./docs/GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf)
+### 3. SmartForm / AdobeForm PDF Output / Form Çıktısı
+*Structured tabular form output generated for the selected currencies.*  
+*Seçili döviz kurları için üretilen düzenli tablo formatında form çıktısı.*
+![Form Output](./images/03_form_output.png)
+
+### 4. Automated HTML Email & CSV Attachment (`CL_BCS` / `SOST`) / HTML Özet Tablolu E-Posta
+*Automated email displaying an HTML summary table of popular currencies in the body along with the `Kurlar.csv` attachment.*  
+*Gövdesinde popüler kurların HTML özet tablosunu ve ekinde `Kurlar.csv` dosyasını barındıran otomatik e-posta çıktısı.*
+![Email Output](./images/04_email_sost.png)
