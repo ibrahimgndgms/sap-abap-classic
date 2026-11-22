@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZIGCL_JOB_UTILITIES</CLSNAME>
+    <LANGU>T</LANGU>
+    <DESCRIPT>Job Cockpit Yardımcı Sınıf</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_START_DUE_DATE</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Bitiş Tarihi Başlama Tarihinden Sonra mı?</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEND_MAIL</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Sorumlu personele bilgilendirme maili gönder</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_START_DUE_DATE</CMPNAME>
+     <SCONAME>IV_END_DATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Tarih</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_START_DUE_DATE</CMPNAME>
+     <SCONAME>IV_START_DATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Tarih</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_MAIL</CMPNAME>
+     <SCONAME>IS_JOB</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Jobs Cockpit Job Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_MAIL</CMPNAME>
+     <SCONAME>IV_JOB_NO</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>İş numarası</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

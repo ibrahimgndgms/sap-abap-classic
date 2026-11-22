@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZIGCL_JOP_MANAGER</CLSNAME>
+    <LANGU>T</LANGU>
+    <DESCRIPT>Job Cockpit Job Manager Sınıfı</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE_NEW_JOB</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Yeni İş Oluşturur</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Seçili İşleri Sil</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_ALL_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Tüm İşleri Getirir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMPLETED_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Tamamlanan İşleri Getirir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CRITICIAL_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Kritik İşleri Getirir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DELAYED_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Geciken İşleri Getirir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_NEW_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Yeni İşleri Getirir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_ONGOING_JOBS</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Devam Eden İşleri Getir</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPDATE_JOB</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Seçili İşi Güncelleme</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_NEW_JOB</CMPNAME>
+     <SCONAME>EV_JOB_NUMBER</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>İş numarası</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE_NEW_JOB</CMPNAME>
+     <SCONAME>IS_JOB</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Jobs Cockpit Job Structure</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_JOBS</CMPNAME>
+     <SCONAME>IT_DELETE_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ALL_JOBS</CMPNAME>
+     <SCONAME>RT_ALL_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMPLETED_JOBS</CMPNAME>
+     <SCONAME>RT_COMPLETED_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CRITICIAL_JOBS</CMPNAME>
+     <SCONAME>RT_CRITICAL_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DELAYED_JOBS</CMPNAME>
+     <SCONAME>RT_DELAYED_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_NEW_JOBS</CMPNAME>
+     <SCONAME>RT_NEW_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_ONGOING_JOBS</CMPNAME>
+     <SCONAME>RT_ONGOING_JOBS</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Job Cockpit İşler Tablosu Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPDATE_JOB</CMPNAME>
+     <SCONAME>IS_JOB</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Jobs Cockpit Job Structure</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

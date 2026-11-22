@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSO" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TOBJ>
+    <OBJCT>ZIG_J_AUTH</OBJCT>
+    <FIEL1>ACTVT</FIEL1>
+    <OCLSS>ZIGC</OCLSS>
+   </TOBJ>
+   <TOBJT>
+    <LANGU>T</LANGU>
+    <OBJECT>ZIG_J_AUTH</OBJECT>
+    <TTEXT>Job Cockpit AUthoriaztion Object</TTEXT>
+   </TOBJT>
+   <TOBJVORFLG>
+    <OBJCT>ZIG_J_AUTH</OBJCT>
+    <FLAG3>N</FLAG3>
+    <FLAG4>A</FLAG4>
+    <FLAG5>A</FLAG5>
+   </TOBJVORFLG>
+   <TACTZ>
+    <TACTZ>
+     <BROBJ>ZIG_J_AUTH</BROBJ>
+     <ACTVT>01</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZIG_J_AUTH</BROBJ>
+     <ACTVT>02</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZIG_J_AUTH</BROBJ>
+     <ACTVT>03</ACTVT>
+    </TACTZ>
+    <TACTZ>
+     <BROBJ>ZIG_J_AUTH</BROBJ>
+     <ACTVT>06</ACTVT>
+    </TACTZ>
+   </TACTZ>
+  </asx:values>
+ </asx:abap>
+</abapGit>

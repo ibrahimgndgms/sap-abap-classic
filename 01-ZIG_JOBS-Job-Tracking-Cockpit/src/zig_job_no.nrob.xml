@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_NROB" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <ATTRIBUTES>
+    <OBJECT>ZIG_JOB_NO</OBJECT>
+    <DOMLEN>ZIGD_JOB_NO</DOMLEN>
+    <PERCENTAGE>75.0</PERCENTAGE>
+    <BUFFER>X</BUFFER>
+    <NOIVBUFFER>00000010</NOIVBUFFER>
+    <CHANGED_AT>20260820091210.153506</CHANGED_AT>
+    <CHANGED_BY>XIGDOGMUS</CHANGED_BY>
+    <ENAME>XIGDOGMUS</ENAME>
+    <EDATE>2026-08-20</EDATE>
+    <ETIME>12:10:42</ETIME>
+   </ATTRIBUTES>
+   <TEXT>
+    <LANGU>T</LANGU>
+    <OBJECT>ZIG_JOB_NO</OBJECT>
+    <TXT>Jobs Cockpit Job No</TXT>
+    <TXTSHORT>Jobs Cockpit Job No</TXTSHORT>
+    <ENAME>XIGDOGMUS</ENAME>
+    <EDATE>2026-08-20</EDATE>
+    <ETIME>12:10:42</ETIME>
+   </TEXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>
