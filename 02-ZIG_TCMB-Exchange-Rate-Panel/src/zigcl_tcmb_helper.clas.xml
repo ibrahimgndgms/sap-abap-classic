@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZIGCL_TCMB_HELPER</CLSNAME>
+    <LANGU>T</LANGU>
+    <DESCRIPT>TCMB Rate Panel Helper</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CALL_ADOBEFORM</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Show adobe form</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CALL_SMARTFORM</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Show smartform</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DOWNLOAD_EXCEL</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Download rates as excel file</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_DB</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Save rates to datebase</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SEND_MAIL</CMPNAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>Send rates as maiil</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_ADOBEFORM</CMPNAME>
+     <SCONAME>IT_RATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>ZIGT_TCMB_RATE Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CALL_SMARTFORM</CMPNAME>
+     <SCONAME>IT_RATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>ZIGT_TCMB_RATE Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DOWNLOAD_EXCEL</CMPNAME>
+     <SCONAME>IT_RATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>ZIGT_TCMB_RATE Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_DB</CMPNAME>
+     <SCONAME>IT_RATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>ZIGT_TCMB_RATE Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SEND_MAIL</CMPNAME>
+     <SCONAME>IT_RATE</SCONAME>
+     <LANGU>T</LANGU>
+     <DESCRIPT>ZIGT_TCMB_RATE Table Type</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
