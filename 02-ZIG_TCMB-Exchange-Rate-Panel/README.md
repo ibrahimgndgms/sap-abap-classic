@@ -79,3 +79,6 @@ Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından günlük yayınlanan XML 
 *Automated email displaying an HTML summary table of popular currencies in the body along with the `Kurlar.csv` attachment.*  
 *Gövdesinde popüler kurların HTML özet tablosunu ve ekinde `Kurlar.csv` dosyasını barındıran otomatik e-posta çıktısı.*
 ![Email Output](./images/04_email_sost.png)
+
+
+**Full Technical Report / Detaylı Proje Raporu:** [GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf](./docs/GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf)
