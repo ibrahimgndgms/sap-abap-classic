@@ -12,7 +12,7 @@
 
 <br/>
 
-**[English](#english) • [Türkçe](#türkçe) **
+[English](#english) • [Türkçe](#türkçe)
 
 </div>
 
