@@ -1,4 +1,4 @@
-# ZIG_JOBS — Enterprise Job Tracking Cockpit / Kurumsal İş Takip Kokpiti
+# 💱 ZIG_TCMB — Central Bank (TCMB) XML Exchange Rate Integration / TCMB Döviz Kuru Entegrasyonu
 
 [English](#english) | [Türkçe](#türkçe)
 
@@ -6,85 +6,64 @@
 
 ## <a name="english"></a>English
 
-**Main Program:** `ZIG_JOB_COCKPIT` | **Transaction Code:** `ZIG_JOBS`  
-An end-to-end SAP ABAP application for centrally managing departmental tasks, personnel assignments, priorities, and lifecycle statuses with strict concurrency and role-based security controls.
+**Main Program:** `ZIG_TCMB_RATE_PANEL` | **Transaction Code:** `ZIG_TCMB`  
+An SAP ABAP integration panel that fetches daily XML exchange rates from the Central Bank of the Republic of Türkiye (TCMB), stores them in SAP, compares daily trends with visual icons, and exports selected rows via Email (`CL_BCS`), Excel, SmartForms, and AdobeForms.
 
-### System Architecture & Data Dictionary (SE11)
-* **Database Tables:**
-  * `ZIGT_JOBS` (`ZIGS_JOB` / Maintenance: `ZIG_JOBS_MAINTENANCE`): Core job records with automatic numbering.
-  * `ZIGT_PERSONELS` (`ZIGS_PERSONEL` / Maintenance: `ZIG_PERSONELS_MAINTE`): Personnel master data with Active/Passive status.
-  * `ZIGT_DEPARTMENTS` (`ZIGS_DEPARTMENT` / Maintenance: `ZIG_DEPS_MAINTENANCE`): Validated department definitions.
-* **Number Range (`SNRO`):** `ZIG_JOB_NO` integrated via `NUMBER_GET_NEXT` in both the cockpit UI and Table Maintenance Events.
-* **Lock Object:** `EZ_ZIGT_JOBS` (`ENQUEUE_EZ_ZIGT_JOBS` / `DEQUEUE_EZ_ZIGT_JOBS`) prevents concurrent editing on Dynpro `0109`.
-* **Search Help:** `ZIG_HV_PERSONELS` (Help View) + `ZIG_SH_PERSONEL` ensures only **Active** personnel can be assigned.
-* **Authorization:** Custom object `ZIG_J_AUTH` (Class `ZIGC`) separating `ZIG_JOB_ADMIN` and `ZIG_JOB_USER` roles in both PBO and PAI.
+### Dual-Structure Architecture (SE11)
+* **`ZIGS_TCMB_RATE` (Service & DB Structure):** Stores raw XML values and email payloads with amount fields typed as `CHAR(10)`.
+* **`ZIGS_TCMB_RATE_D` (Container ALV Display Structure):** Converts rates to `DEC(8,4)` for accurate numeric sorting and adds `STATUS` (`ICON_D`) for trend arrows.
 
-### ⚙️ Object-Oriented ABAP Design (SE24)
+### Object-Oriented ABAP Design (SE24)
 
-| Class | Key Methods | Responsibility |
+| Class | Method(s) | Responsibility |
 |---|---|---|
-| `ZIGCL_JOP_MANAGER` | `create_new_job`, `update_job`, `delete_jobs`, `get_all_jobs`, `get_criticial_jobs`, `get_delayed_jobs` | Full CRUD operations and status/priority-based data retrieval. |
-| `ZIGCL_JOP_ANALYTICS` | `get_total_jobs_count`, `get_delayed_jobs_count`, `get_criticial_jobs_count`, `get_ongoing_jobs_count` | Real-time KPI calculations for the main dashboard. |
-| `ZIGCL_JOB_UTILITIES` | `check_start_due_date` | Business rule validations (date consistency, status transitions). |
+| `ZIGCL_GET_DAY_NUMBER` | `GET_DAY_NUMBER` | Determines day of the week (1–7) for weekend fallback and Monday comparison logic. |
+| `ZIGCL_SET_TCMB_URL` | `SET_URL` | Dynamically builds the TCMB XML endpoint URL (e.g., `kurlar/202608/04082026.xml`). |
+| `ZIGCL_TCMB_RATE_SERVICE` | `GET_DATA` | Fetches and parses current & previous business day XML rates via `IF_HTTP_CLIENT`. |
+| `ZIGCL_TCMB_HELPER` | `SAVE_DB`, `DOWNLOAD_EXCEL`, `SEND_MAIL`, `CALL_ADOBEFORM`, `CALL_SMARTFORM` | Handles DB persistence (`ZIGT_TCMB_RATE`), UTF-8 Excel export, `CL_BCS` HTML email with attachment (`ZIGT_MAIL_ADRS`), and PDF/Form outputs (`ZIG_TCMB_RATE_AF` / `ZIG_TCMB_RATE_SF`). |
 
-### Verified Test Scenarios
-
-| ID | Test Case | Expected Behavior | Result |
-|---|---|---|---|
-| **T1** | Invalid date range (`Due Date < Start Date`) | Error message raised; save blocked | Passed |
-| **T2** | Assigning a passive employee | Excluded automatically via `ZIG_SH_PERSONEL` | Passed |
-| **T3** | Standard user attempting to delete another user's job | Blocked in PAI via `AUTHORITY-CHECK` (`ZIG_J_AUTH`) | Passed |
-| **T4** | Deleting a Completed or Cancelled job | Blocked with business rule error message | Passed |
-| **T5** | Concurrent edit by two users | `ENQUEUE_EZ_ZIGT_JOBS` locks record in display-only mode | Passed |
+### Key Business Logic & Technical Highlights
+* **Weekend & Monday Fallback:** Warns the user on weekends and fetches the latest Friday rates. On Mondays, trend comparisons are automatically calculated against Friday's rates.
+* **Daily Trend Indicators:** Displays Green/Red trend arrows (`ICON_D`) in Container ALV based on day-over-day rate changes.
+* **Selective Export:** Users can select specific rows in Container ALV to generate targeted AdobeForms/SmartForms, Excel files, or emails.
+* **UTF-8 Turkish Character Fix:** Added **UTF-8 BOM (`0xEF, 0xBB, 0xBF`)** and Codepage `4110` to `CL_BCS` binary Excel attachments.
+* **Automated Background Job (`SM36`):** Configured dynamic date variant (`SY-DATUM`) and scheduled daily job `ZIG_TCMB_JOB_DAILY`.
 
 ---
 
 ## <a name="türkçe"></a>Türkçe
 
-**Ana Program:** `ZIG_JOB_COCKPIT` | **İşlem Kodu (T-Code):** `ZIG_JOBS`  
-Şirket bünyesindeki departmanların iş kayıtlarını merkezi bir SAP ortamında uçtan uca yönetmek, personellere atamak, öncelik ve durumlarını eşzamanlılık (kilit) ve rol bazlı yetki kontrolleriyle takip etmek için geliştirilmiştir.
+**Ana Program:** `ZIG_TCMB_RATE_PANEL` | **İşlem Kodu (T-Code):** `ZIG_TCMB`  
+Türkiye Cumhuriyet Merkez Bankası (TCMB) tarafından günlük yayınlanan XML döviz kurlarını web servis üzerinden SAP'ye çeken, veritabanına kaydeden, önceki iş günüyle kıyaslayarak trend ikonlarıyla sunan ve seçili satırları E-posta (`CL_BCS`), Excel, SmartForms ve AdobeForms olarak dışa aktaran entegrasyon paneli.
 
-### Sistem Mimarisi ve Veri Sözlüğü (SE11)
-* **Veritabanı Tabloları:**
-  * `ZIGT_JOBS` (`ZIGS_JOB` / Bakım: `ZIG_JOBS_MAINTENANCE`): Otomatik numaralandırmalı ana iş kayıtları tablosu.
-  * `ZIGT_PERSONELS` (`ZIGS_PERSONEL` / Bakım: `ZIG_PERSONELS_MAINTE`): Aktif/Pasif durumlu personel ana verisi.
-  * `ZIGT_DEPARTMENTS` (`ZIGS_DEPARTMENT` / Bakım: `ZIG_DEPS_MAINTENANCE`): Departman tanımları.
-* **Numara Aralığı (`SNRO`):** `ZIG_JOB_NO` nesnesi, `NUMBER_GET_NEXT` ile hem kokpit ekranına hem de Bakım Tablosu olaylarına (Events) entegre edilmiştir.
-* **Kilit Nesnesi (Lock Object):** `EZ_ZIGT_JOBS` (`ENQUEUE` / `DEQUEUE`) ile Dynpro `0109` ekranında eşzamanlı düzenleme engellenir.
-* **Arama Yardımcısı (Search Help):** `ZIG_HV_PERSONELS` ve `ZIG_SH_PERSONEL` ile yalnızca **Aktif** personellerin seçilmesi sağlanır.
-* **Yetkilendirme:** `ZIGC` sınıfı altındaki `ZIG_J_AUTH` yetki nesnesi ile Yönetici (`ZIG_JOB_ADMIN`) ve Normal Kullanıcı (`ZIG_JOB_USER`) rolleri PBO ve PAI adımlarında ayrıştırılmıştır.
+### Çift Structure Mimarisi (SE11)
+* **`ZIGS_TCMB_RATE` (Servis & Veritabanı Yapısı):** Ham XML verilerinin çekilmesi, veritabanı kayıtları ve e-posta süreçleri için tüm tutar alanları `CHAR(10)` olarak tanımlanmıştır.
+* **`ZIGS_TCMB_RATE_D` (Container ALV Gösterim Yapısı):** ALV'de doğru sayısal sıralama (sorting) yapılabilmesi için tutar alanları `DEC(8,4)` tipine çevrilmiş ve trend ikonları için `STATUS` (`ICON_D`) alanı eklenmiştir.
 
-### ⚙️ Nesne Yönelimli ABAP Mimarisi (SE24)
+### Nesne Yönelimli ABAP Mimarisi (SE24)
 
-| Sınıf | Temel Metotlar | Sorumluluk |
+| Sınıf | Metot(lar) | Sorumluluk |
 |---|---|---|
-| `ZIGCL_JOP_MANAGER` | `create_new_job`, `update_job`, `delete_jobs`, `get_all_jobs`, `get_criticial_jobs`, `get_delayed_jobs` | Tüm CRUD işlemleri ve durum/öncelik bazlı kayıt sorgulamaları. |
-| `ZIGCL_JOP_ANALYTICS` | `get_total_jobs_count`, `get_delayed_jobs_count`, `get_criticial_jobs_count`, `get_ongoing_jobs_count` | Ana kokpit (Dashboard) için anlık KPI hesaplamaları. |
-| `ZIGCL_JOB_UTILITIES` | `check_start_due_date` | Tarih tutarlılığı ve iş kuralı doğrulamaları. |
+| `ZIGCL_GET_DAY_NUMBER` | `GET_DAY_NUMBER` | Girilen tarihin haftanın hangi günü (1–7) olduğunu hesaplar (hafta sonu ve Pazartesi kontrolü). |
+| `ZIGCL_SET_TCMB_URL` | `SET_URL` | Seçilen tarihe göre dinamik TCMB XML bağlantı adresini (ör. `kurlar/202608/04082026.xml`) üretir. |
+| `ZIGCL_TCMB_RATE_SERVICE` | `GET_DATA` | `IF_HTTP_CLIENT` ile güncel ve önceki iş gününe ait XML kur verilerini okur. |
+| `ZIGCL_TCMB_HELPER` | `SAVE_DB`, `DOWNLOAD_EXCEL`, `SEND_MAIL`, `CALL_ADOBEFORM`, `CALL_SMARTFORM` | Veritabanı kaydı (`ZIGT_TCMB_RATE`), UTF-8 Excel indirme, `CL_BCS` ile HTML özet tablolu mail (`ZIGT_MAIL_ADRS`) ve form çıktılarını (`ZIG_TCMB_RATE_AF` / `ZIG_TCMB_RATE_SF`) yönetir. |
 
-### Doğrulanan Test Senaryoları
-
-| No | Test Senaryosu | Beklenen Sonuç | Durum |
-|---|---|---|---|
-| **T1** | Geçersiz tarih aralığı (`Son Teslim < Başlangıç`) | Hata mesajı verilir ve kayıt engellenir | Başarılı |
-| **T2** | Pasif personele iş atanması | `ZIG_SH_PERSONEL` arama yardımcısında listelenmez | Başarılı |
-| **T3** | Normal kullanıcının başka işi silmeye çalışması | PAI `AUTHORITY-CHECK` (`ZIG_J_AUTH`) ile engellenir | Başarılı |
-| **T4** | Tamamlanmış veya İptal işin silinmesi | İş kuralı hatası dönülerek engellenir | Başarılı |
-| **T5** | Aynı işin iki farklı kullanıcıca açılması | `ENQUEUE_EZ_ZIGT_JOBS` ile sadece görüntüleme modunda açılır | Başarılı |
+### Öne Çıkan İş Kuralları ve Teknik Çözümler
+* **Hafta Sonu ve Pazartesi Kıyaslama Mantığı:** Cumartesi/Pazar seçildiğinde kullanıcıyı uyararak en son Cuma kurlarını getirir. Pazartesi günleri kıyaslamayı otomatik olarak Cuma kurlarıyla yapar.
+* **Günlük Değişim Trend İkonları:** Yükseliş, düşüş ve sabit kalma durumları `ICON_D` ile görsel oklar halinde sunulur.
+* **Seçimli Çıktı Alma:** Container ALV'de yalnızca kullanıcının seçtiği kurlar için Excel, Mail, SmartForm veya AdobeForm üretilebilir.
+* **Türkçe Karakter Çözümü:** `CL_BCS` e-posta eklerindeki Excel dosyalarında karakter bozulmasını önlemek için **UTF-8 BOM (`0xEF, 0xBB, 0xBF`)** ve Codepage `4110` uygulanmıştır.
+* **Otomatik Arka Plan İşi (`SM36`):** Dinamik tarih varyantı (`SY-DATUM`) ile `ZIG_TCMB_JOB_DAILY` günlük arka plan işi tanımlanmıştır.
 
 ---
 
 ## Screenshots / Ekran Görüntüleri
 
-### 1. Main Cockpit & Dashboard / Ana Kokpit (Dynpro 101)
-![Main Dashboard](./images/dynpro_101_dashboard.png)
+### 1. Container ALV Exchange Rate Panel & Trend Icons / ALV Kur Paneli
+![TCMB ALV Panel](./images/tcmb_alv_panel.png)
 
-### 2. Job Creation (Dynpro 102) & ALV List (Dynpro 103)
-![Create Job](./images/dynpro_102_create.png)
-![ALV Job List](./images/dynpro_103_alv.png)
+### 2. Automated HTML Summary Email & PDF Form Output / E-Posta ve Form Çıktısı
+![Email & Form Output](./images/tcmb_output.png)
 
-### 3. Lock Object & Authorization Controls / Kilit ve Yetki Kontrolleri (Dynpro 109)
-![Lock Object Test](./images/lock_object_test.png)
-![Authorization Check](./images/auth_check.png)
-
-📄 **Full Technical Report / Detaylı Proje Raporu:** [GUI-SAP_ABAP_JOB_COCKPIT.pdf](./docs/GUI-SAP_ABAP_JOB_COCKPIT.pdf)
+📄 **Full Technical Report / Detaylı Proje Raporu:** [GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf](./docs/GUI-SAP_ABAP_TCMB_Doviz_Kuru_Proje_Raporu.pdf)
